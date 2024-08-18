@@ -2,37 +2,22 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header {
+  position: fixed;       /* Keeps the header fixed at the top */
+    top: 0;                /* Position it at the very top of the page */
+    left: 0;               /* Align it to the left edge */
+    width: 100%;           /* Make the header span the entire width of the page */
+    height: 4rem;          /* Set the height to 4 rem */
+    background-color: #d63939; /* background colour for header */
+    font-family: 'Orbitron', sans-serif; /*Import futuristic orbitron font for JW*/
+    font-size: xx-large;
 }
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&display=swap');
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  .Body {
+  padding-top: 4rem; /*Padding to the body to ensure no content is cut off by header*/
+  width: 100%; /*Make it cover the entire width of the page*/
+  height: 100%; /*make it cover the entire height of the page*/
+  background-color: blueviolet; /*background colour for body*/
 }
