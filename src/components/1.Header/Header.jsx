@@ -11,7 +11,10 @@ export const Header = () =>
             </div>
 
             <div className="Right_Header">
-                JW
+                <div className="Right_Header_Semi_Circle" />
+                <div className="Right_Header_Rectangle">
+                    <span className="text">JW</span>
+                </div>
             </div>
         </div>
     )
