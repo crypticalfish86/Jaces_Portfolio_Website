@@ -4,11 +4,14 @@ import {Body} from './components/2.Body/Body'
 import {Footer} from './components/3.Footer/Footer'
 
 function App() {
+  
   return (
     <div className="App">
-      <Header />
-      <Body />
-      <Footer />
+      <div className='Background_Image'>
+        <Header />
+        <Body />
+        <Footer />
+      </div>
     </div>
   );
 }
