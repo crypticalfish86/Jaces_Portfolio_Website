@@ -2,7 +2,7 @@ export const Footer = () =>
 {
     return(
         <div className="Footer">
-            Footer
+            Contact Information
         </div>
     )
 }

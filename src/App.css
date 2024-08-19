@@ -1,6 +1,8 @@
+/*Basic format for app wide effects*/
 .App {
   text-align: center;
 }
+  /*The background image for the app*/
   .Background_Image {
     background-image: url(./Assets/Images/nebula_pic.jpg); /*Add background image*/
     background-size: cover; /*Ensure image covers whole div*/
@@ -9,50 +11,44 @@
     height: 100%; 
   }
 
+/*The app header (home, about, projects, resume)*/
 .Header {
-  position: relative;
-  height: 2vh;
-  color: transparent;
+  height: 5vh;
+  background-color: red;
 }
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&display=swap');
-  .Left_Header {
-    background-color: rgb(10, 48, 55);
-    width: 6%;
-    font-size: xxx-large;
-  }
-  .Left_Header_Image{
-    width:100%;
-    height: 100%;/*Image takes up full header*/
-  }
-
-  .Middle_Header {
-    background-color: #0a0c37ff;
-    color: #d5e25f;
-    flex-grow: 1; /*Makes middle header take up the rest of the space between the child headers*/
-  }
-  .Right_Header {
-    background-color: rgb(10, 55, 40);
-    width: 40%;
-    font-size: xx-large;
-    display: flex; /*Enable flex display*/
-    gap: 1vw; /*Add horizontal padding with flex display*/
-  }
     
 
-
-  .Body {
+/*The main body of the app*/
+.Body {
   width: 100%; /*Make it cover the entire width of the page*/
   height: 100%; /*make it cover the entire height of the page*/
   background-color: transparent; /*background colour for body*/
-  
+  font: 0.75rem sans-serif;
 }
-  .VapourImage{
-    width: 100%;
-    height: 100%;
+  .Body_Introduction_Information {
+    display: flex; /*Enables flex display features in this div and children*/
+    gap: 2vw; /*Ensure small gap between child components*/
+    height: 12vh;
   }
+    .Personal_Introduction {
+      flex-grow: 0.5; /*Ensure 50% cover of available div*/
 
+      margin-left: 2vw; /*Gives a small margin on the left side*/
+    }
+    .Tips {
+      flex-grow: 0.5; /*Ensure 50% cover of available div*/
+      margin-right: 2vw; /*Gives a small margin on the right side*/
+    }
 
+/*The footer with further contact information*/
 .Footer {
   width: 100%;
-  background-color: transparent;
+  background-color: orange;
+}
+
+
+/*Reusable classes*/
+.Information_Box {
+  border-radius: 1vh 1vh; /*Gives rounded edges to box div*/
+  background-color: #E54ED0; /*Gives a nebula like colour*/
 }
