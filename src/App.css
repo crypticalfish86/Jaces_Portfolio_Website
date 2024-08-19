@@ -39,6 +39,12 @@
       flex-grow: 0.5; /*Ensure 50% cover of available div*/
       margin-right: 2vw; /*Gives a small margin on the right side*/
     }
+  .Tech_Image{
+    width: 8vw;
+    height: 8vh;
+    margin: 1vw;
+    object-fit: contain; /*Ensures images aren't cropped or distorted while obeying the dimension restrictions*/
+  }
 
 /*The footer with further contact information*/
 .Footer {

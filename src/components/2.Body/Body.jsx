@@ -1,3 +1,5 @@
+import { ListedTechs } from "./Listed_Techs"
+
 export const Body = () =>
 {
 
@@ -8,7 +10,7 @@ export const Body = () =>
                 <div className="Personal_Introduction Information_Box">Hello my name is jace(information)</div>
                 <div className="Tips Information_Box">Tips on website navigation/table of contents</div>
             </div>
-            <div>the technologies</div>
+            <ListedTechs />
             <div>Prior jobs</div>
             <div>Previous Projects</div>
         </div>
