@@ -8,7 +8,7 @@
     background-size: cover; /*Ensure image covers whole div*/
     background-repeat: no-repeat; /*don't have the image repeat (causes ugly white lines and strange gradients)*/
     width: 100%;
-    height: 100%; 
+    height: 100%;
   }
 
 /*The app header (home, about, projects, resume)*/
@@ -27,8 +27,8 @@
 }
   .Body_Introduction_Information {
     display: flex; /*Enables flex display features in this div and children*/
-    gap: 2vw; /*Ensure small gap between child components*/
-    height: 12vh;
+    gap: 2rem; /*Ensure small gap between child components*/
+    height: 8rem;
   }
     .Personal_Introduction {
       flex-grow: 0.5; /*Ensure 50% cover of available div*/
@@ -39,12 +39,7 @@
       flex-grow: 0.5; /*Ensure 50% cover of available div*/
       margin-right: 2vw; /*Gives a small margin on the right side*/
     }
-  .Tech_Image{
-    width: 8vw;
-    height: 8vh;
-    margin: 1vw;
-    object-fit: contain; /*Ensures images aren't cropped or distorted while obeying the dimension restrictions*/
-  }
+
 
 /*The footer with further contact information*/
 .Footer {
@@ -58,3 +53,27 @@
   border-radius: 1vh 1vh; /*Gives rounded edges to box div*/
   background-color: #E54ED0; /*Gives a nebula like colour*/
 }
+
+.Tech_Images_Display_Box {
+  display: flex; /*displays divs horizontally*/
+  overflow: scroll; /*Allows you to scroll through all the boxes (change to auto scroll eventually)*/
+}
+  .Tech_Image_Display_Box {
+    margin-top: 2rem; /*Gives a small gap to all from the top*/
+    margin-left: 2rem; /*Gives a small gap to the left of each box*/
+    margin-bottom: 2rem /*Gives a small gap to all from the bottom*/;
+    border-radius: 1vh; /*Gives rounded borders (use vh to maintain on zoom in/out)*/
+    background-color: #E54ED0;/*Gives a nebula like colour*/
+    padding: 1rem; /*1 rem all around in size to the internals of the box*/
+  }
+    /*Note the size of "Tech_Image_Display_Box is dependent on the dimensions and margins of Tech Image*/
+    .Tech_Image {
+      background-color: rgb(52, 57, 61);
+      width: 6rem;
+      height: 4rem;
+      margin-right: 1rem; /*Adds 1rem width to the box containing it*/
+      margin-left: 1rem; /*Adds 1rem width to the box containing it*/
+      margin-top: 8rem; /*Adds 8rem height to the box containing it*/
+      margin-bottom: 2rem; /*Adds 2rem height to the box containing it*/
+      object-fit: contain; /*Ensures images aren't cropped or distorted while obeying the dimension restrictions*/
+    }

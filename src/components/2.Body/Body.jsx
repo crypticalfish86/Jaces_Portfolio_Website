@@ -1,4 +1,5 @@
 import { ListedTechs } from "./Listed_Techs"
+import { PriorJobs } from './Prior_Jobs'
 
 export const Body = () =>
 {
@@ -11,7 +12,7 @@ export const Body = () =>
                 <div className="Tips Information_Box">Tips on website navigation/table of contents</div>
             </div>
             <ListedTechs />
-            <div>Prior jobs</div>
+            <PriorJobs />
             <div>Previous Projects</div>
         </div>
     )
