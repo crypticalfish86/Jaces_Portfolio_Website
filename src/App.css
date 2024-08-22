@@ -66,6 +66,14 @@
     background-color: #E54ED0;/*Gives a nebula like colour*/
     padding: 1rem; /*1 rem all around in size to the internals of the box*/
   }
+  @keyframes slide { /*First attempt at slide animation (NEEDS WORK DO NOT APPLY)*/
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
     /*Note the size of "Tech_Image_Display_Box is dependent on the dimensions and margins of Tech Image*/
     .Tech_Image {
       background-color: rgb(52, 57, 61);

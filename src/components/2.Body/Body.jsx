@@ -1,4 +1,4 @@
-import { ListedTechs } from "./Listed_Techs"
+import { ListedTechsContainer } from "./Listed_Techs_Container"
 import { PriorJobs } from './Prior_Jobs'
 
 export const Body = () =>
@@ -11,7 +11,7 @@ export const Body = () =>
                 <div className="Personal_Introduction Information_Box">Hello my name is jace(information)</div>
                 <div className="Tips Information_Box">Tips on website navigation/table of contents</div>
             </div>
-            <ListedTechs />
+            <ListedTechsContainer />
             <PriorJobs />
             <div>Previous Projects</div>
         </div>
