@@ -1,87 +1,38 @@
-/*Basic format for app wide effects*/
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
 }
-  /*The background image for the app*/
-  .Background_Image {
-    background-image: url(./Assets/Images/nebula_pic.jpg); /*Add background image*/
-    background-size: cover; /*Ensure image covers whole div*/
-    background-repeat: no-repeat; /*don't have the image repeat (causes ugly white lines and strange gradients)*/
-    width: 100%;
-    height: 100%;
+
+body{
+  background-color: aliceblue;
+}
+
+
+.Listed_Techs_Container{
+  overflow: hidden; /*Hides overflowing tech images*/
+  padding: 4rem 0; /*4rem to top/bottom padding but 0 padding to right/left*/
+  background-color: #293542;
+  white-space: nowrap; /*Ensures no wrapping no matter what*/
+}
+
+.Tech_Images_Display {
+  display: inline-block;
+  animation: 5s slide infinite linear;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
   }
-
-/*The app header (home, about, projects, resume)*/
-.Header {
-  height: 5vh;
-  background-color: red;
-}
-    
-
-/*The main body of the app*/
-.Body {
-  width: 100%; /*Make it cover the entire width of the page*/
-  height: 100%; /*make it cover the entire height of the page*/
-  background-color: transparent; /*background colour for body*/
-  font: 0.75rem sans-serif;
-}
-  .Body_Introduction_Information {
-    display: flex; /*Enables flex display features in this div and children*/
-    gap: 2rem; /*Ensure small gap between child components*/
-    height: 8rem;
+  to {
+    transform: translateX(-100%);
   }
-    .Personal_Introduction {
-      flex-grow: 0.5; /*Ensure 50% cover of available div*/
-
-      margin-left: 2vw; /*Gives a small margin on the left side*/
-    }
-    .Tips {
-      flex-grow: 0.5; /*Ensure 50% cover of available div*/
-      margin-right: 2vw; /*Gives a small margin on the right side*/
-    }
-
-
-/*The footer with further contact information*/
-.Footer {
-  width: 100%;
-  background-color: orange;
 }
 
-
-/*Reusable classes*/
-.Information_Box {
-  border-radius: 1vh 1vh; /*Gives rounded edges to box div*/
-  background-color: #E54ED0; /*Gives a nebula like colour*/
+.Tech_Images_Display img {
+  height: 4rem; /*Makes all images 4rem tall*/
+  width: 4rem; /*Makes all images 4rem wide*/
+  object-fit: contain; /*Ensures the width/height doesn't distort image*/
+  margin: 0 1rem; /*Adds a left/right gap between all images*/
 }
-
-.Tech_Images_Display_Box {
-  display: flex; /*displays divs horizontally*/
-  overflow: scroll; /*Allows you to scroll through all the boxes (change to auto scroll eventually)*/
-}
-  .Tech_Image_Display_Box {
-    margin-top: 2rem; /*Gives a small gap to all from the top*/
-    margin-left: 2rem; /*Gives a small gap to the left of each box*/
-    margin-bottom: 2rem /*Gives a small gap to all from the bottom*/;
-    border-radius: 1vh; /*Gives rounded borders (use vh to maintain on zoom in/out)*/
-    background-color: #E54ED0;/*Gives a nebula like colour*/
-    padding: 1rem; /*1 rem all around in size to the internals of the box*/
-  }
-  @keyframes slide { /*First attempt at slide animation (NEEDS WORK DO NOT APPLY)*/
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-    /*Note the size of "Tech_Image_Display_Box is dependent on the dimensions and margins of Tech Image*/
-    .Tech_Image {
-      background-color: rgb(52, 57, 61);
-      width: 6rem;
-      height: 4rem;
-      margin-right: 1rem; /*Adds 1rem width to the box containing it*/
-      margin-left: 1rem; /*Adds 1rem width to the box containing it*/
-      margin-top: 8rem; /*Adds 8rem height to the box containing it*/
-      margin-bottom: 2rem; /*Adds 2rem height to the box containing it*/
-      object-fit: contain; /*Ensures images aren't cropped or distorted while obeying the dimension restrictions*/
-    }

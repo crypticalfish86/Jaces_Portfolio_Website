@@ -11,6 +11,8 @@ export const ListedTechsContainer = () =>
     
         const imageArray = importAll(require.context('../../Assets/Technology_Images', false, /\.(png|jpe?g|svg)$/))
         return(
-            <ListedTechs imageArray= {imageArray} />
+            <div>
+                <ListedTechs imageArray= {imageArray} />
+            </div>
         )
 }
