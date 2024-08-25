@@ -13,26 +13,31 @@ body{
   overflow: hidden; /*Hides overflowing tech images*/
   padding: 4rem 0; /*4rem to top/bottom padding but 0 padding to right/left*/
   background-color: #293542;
-  white-space: nowrap; /*Ensures no wrapping no matter what*/
+  display: flex; /*Ensures horizontal div placement for children*/
 }
-
-.Tech_Images_Display {
-  display: inline-block;
-  animation: 5s slide infinite linear;
-}
-
-@keyframes slide {
-  from {
-    transform: translateX(0);
+  .Tech_Images_Display {
+    display: flex; /*Ensures horizontal div placement for children*/
+    animation: 5s slide infinite linear; /*looping animation creating an infinite repeating loop (when 3 or more of the techs are conjoined*/
   }
-  to {
-    transform: translateX(-100%);
-  }
-}
+            /*Slide moves the div from right to left offscreen*/
+            @keyframes slide {
+              from {
+                transform: translateX(0);
+              }
+              to {
+                transform: translateX(-100%);
+              }
+            }
+    .Tech_Images_Display div{
+      height: 8rem; /*Makes all images 4rem tall*/
+      width: 6rem; /*Makes all images 4rem wide*/
+      background-color: blueviolet;
+      margin: 0 1rem; /*Adds a left/right gap between all images*/
+      border-radius: 1rem 1rem;
+    }
+      .Tech_Images_Display img {
+        height: 100%; /*Makes all images 4rem tall*/
+        width: 100%; /*Makes all images 4rem wide*/
+        object-fit: contain; /*Ensures the width/height doesn't distort image*/
 
-.Tech_Images_Display img {
-  height: 4rem; /*Makes all images 4rem tall*/
-  width: 4rem; /*Makes all images 4rem wide*/
-  object-fit: contain; /*Ensures the width/height doesn't distort image*/
-  margin: 0 1rem; /*Adds a left/right gap between all images*/
-}
+      }
