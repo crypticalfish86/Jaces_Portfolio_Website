@@ -11,17 +11,17 @@ body{
 }
   .Body_Introduction_Information {
       display: flex; /*Place child divs horizontally to each other*/
-      left: 50%; /*Centres the div*/
+      justify-content: center; /*Centres the children divs*/
   }
     .Body_Introduction_Information div {
+      width: 90%;
       background-color: cadetblue; /*Temporary background colour*/
-      margin: 1rem; /*Add small margin to the edges*/
+      margin: 1rem; /*Add small margin to the edges giving the outer border look*/
       border-radius: 1rem; /*Add curved corners to box*/
     }
-      .Inner_Introduction_Information_Box{
+      .Inner_Information_Box{
         background-color: brown !important; /*Forces inner colour to be different to parent div(was inheriting parent background colour without !important)*/
         border-radius: 1rem; /*Gives curved borders*/
-        
       }
         .Used_Techs{
           width: fit-content; /*Makes width as big as the text*/
@@ -32,6 +32,12 @@ body{
         .Information_Text{
           margin: 1rem 0; /*Add a small margin in Y direction*/
         }
+    .Tips_Information_Box{
+      border-radius: 1rem;
+    }
+      .Bullet_Point{
+        background-color: brown !important;
+      }
 
   .Listed_Techs_Container{
     overflow: hidden; /*Hides overflowing tech images*/
