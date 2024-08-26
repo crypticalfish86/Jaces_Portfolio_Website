@@ -4,49 +4,73 @@
   box-sizing: border-box; 
 }
 
+
+
 body{
   background-color: aliceblue;
 }
-
-
-.Listed_Techs_Container{
-  overflow: hidden; /*Hides overflowing tech images*/
-  padding: 4rem 0; /*4rem to top/bottom padding but 0 padding to right/left*/
-  background-color: #293542;
-  display: flex; /*Ensures horizontal div placement for children*/
-}
-  .Tech_Images_Display {
-    display: flex; /*Ensures horizontal div placement for children*/
-    animation: 10s slide infinite linear; /*looping animation creating an infinite repeating loop (when 3 or more of the techs are conjoined*/
+  .Body_Introduction_Information {
+      display: flex; /*Place child divs horizontally to each other*/
+      left: 50%; /*Centres the div*/
   }
-            /*Slide moves the div from right to left offscreen*/
-            @keyframes slide {
-              from {
-                transform: translateX(0);
-              }
-              to {
-                transform: translateX(-100%);
-              }
-            }
-    .Tech_Image_Box_Container{
-      height: 11rem; /*Makes all images 4rem tall*/
-      width: 8rem; /*Makes all images 4rem wide*/
-      background-color: blueviolet;
-      margin: 0 1rem; /*Adds a left/right gap between all images*/
-      border-radius: 1rem 1rem; /*Add curved corners to box*/
+    .Body_Introduction_Information div {
+      background-color: cadetblue; /*Temporary background colour*/
+      margin: 1rem; /*Add small margin to the edges*/
+      border-radius: 1rem; /*Add curved corners to box*/
     }
-      .Tech_Image_Box_Title {
-        padding-top: 0.5rem; /*Add padding between top of box and text*/
-        padding-bottom: 0.5rem; /*Add padding between text and image*/
-        text-align: center; /*centre text*/
-        font-size: large; /*Increase text size*/
-        font-weight: bold;/*Bold text*/
+      .Inner_Introduction_Information_Box{
+        background-color: brown !important; /*Forces inner colour to be different to parent div(was inheriting parent background colour without !important)*/
+        border-radius: 1rem; /*Gives curved borders*/
+        
       }
-      .Tech_Images_Display img {
-        height: 5rem; /*controls height of the image (also this seems to control width)*/
-        width: 90%; /*Makes all images fill most of the width (also seems to compliment margin to centre imgae)*/
-        margin: 0.4rem; /*This margin centres the images*/
-        margin-top: 2rem; /*Add some distance between text and image*/
-        object-fit: contain; /*Ensures the width/height doesn't distort image*/
-        background-color: #20201b;
+        .Used_Techs{
+          width: fit-content; /*Makes width as big as the text*/
+          height: fit-content; /*Makes the height as big as the text*/
+          padding-left: 1rem; /*Adds padding to left to prevent text going out of border radius*/
+          padding-right: 1rem; /*Adds padding to right to prevent text going out of border radius*/
+        }
+        .Information_Text{
+          margin: 1rem 0; /*Add a small margin in Y direction*/
+        }
+
+  .Listed_Techs_Container{
+    overflow: hidden; /*Hides overflowing tech images*/
+    padding: 4rem 0; /*4rem to top/bottom padding but 0 padding to right/left*/
+    background-color: #293542; /*TEMP COLOUR for div visibility*/
+    display: flex; /*Ensures horizontal div placement for children*/
+  }
+    .Tech_Images_Display {
+      display: flex; /*Ensures horizontal div placement for children*/
+      animation: 10s slide infinite linear; /*looping animation creating an infinite repeating loop (when 3 or more of the techs are conjoined*/
+    }
+              /*Slide moves the div from right to left offscreen*/
+              @keyframes slide {
+                from {
+                  transform: translateX(0);
+                }
+                to {
+                  transform: translateX(-100%);
+                }
+              }
+      .Tech_Image_Box_Container{
+        height: 11rem; /*Makes all images 4rem tall*/
+        width: 8rem; /*Makes all images 4rem wide*/
+        background-color: blueviolet; /*TEMP COLOUR for div visibility*/
+        margin: 0 1rem; /*Adds a left/right gap between all images*/
+        border-radius: 1rem 1rem; /*Add curved corners to box*/
       }
+        .Tech_Image_Box_Title {
+          padding-top: 0.5rem; /*Add padding between top of box and text*/
+          padding-bottom: 0.5rem; /*Add padding between text and image*/
+          text-align: center; /*centre text*/
+          font-size: large; /*Increase text size*/
+          font-weight: bold;/*Bold text*/
+        }
+        .Tech_Images_Display img {
+          height: 5rem; /*controls height of the image (also this seems to control width)*/
+          width: 90%; /*Makes all images fill most of the width (also seems to compliment margin to centre imgae)*/
+          margin: 0.4rem; /*This margin centres the images*/
+          margin-top: 2rem; /*Add some distance between text and image*/
+          object-fit: contain; /*Ensures the width/height doesn't distort image*/
+          background-color: #20201b; /*TEMP COLOUR for div visibility*/
+        }
