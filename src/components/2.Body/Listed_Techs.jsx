@@ -9,7 +9,9 @@ export const ListedTechs = (props) =>
             <div className="Tech_Images_Display">
                 {imageArray.map((image, index) => (
                     <div className="Tech_Image_Box_Container">
-                        {imageTitles[index]} 
+                        <div className="Tech_Image_Box_Title"> 
+                            {imageTitles[index]} 
+                        </div>
                         <img key={index} src={image} alt={`img-${index}`}  className="Tech_Image"/>
                     </div>
                 ))}
@@ -17,7 +19,9 @@ export const ListedTechs = (props) =>
             <div className="Tech_Images_Display">
                 {imageArray.map((image, index) => (
                 <div className="Tech_Image_Box_Container"> 
-                    {imageTitles[index]}
+                        <div className="Tech_Image_Box_Title"> 
+                            {imageTitles[index]} 
+                        </div>
                     <img key={index} src={image} alt={`img-${index}`}  className="Tech_Image"/>
                 </div>
                 ))}
@@ -25,7 +29,9 @@ export const ListedTechs = (props) =>
             <div className="Tech_Images_Display">
                 {imageArray.map((image, index) => (
                 <div className="Tech_Image_Box_Container">
-                    {imageTitles[index]}  
+                        <div className="Tech_Image_Box_Title"> 
+                            {imageTitles[index]} 
+                        </div>
                     <img key={index} src={image} alt={`img-${index}`}  className="Tech_Image"/>
                 </div>
                 ))}

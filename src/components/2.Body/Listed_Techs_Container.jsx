@@ -7,7 +7,7 @@ export const ListedTechsContainer = () =>
         function importAll(path)
         {
             const images = path.keys().map((item) =>{
-                const filename = item.replace('./', '');
+                const filename = item.replace('./', ''); //get just the filename from the key
                 return {
                     image: path(item),//imported image
                     fileName: filename //the filename
@@ -18,7 +18,7 @@ export const ListedTechsContainer = () =>
     
         let imageFilesArray = importAll(require.context('../../Assets/Technology_Images', false, /\.(png|jpe?g|svg)$/)) //import all pngs, jpgs, jpegs and svgs from this path
         const imageNames = imageFilesArray.map(image => {return image.fileName}) //get an array of file names
-        const imageTitles = imageNames.map(name => {return name.replace(/^\d+|(?<=\.)[^.]*$/g, '')}) //turns those filenames and turn them into their actual titles
+        const imageTitles = imageNames.map(name => {return name.replace(/^\d+|(?<=\.)[^.]*$/g, '').replace('svg', '').replaceAll('.', '')}) //turn filenames into titles (extra svg replace needed for some reason)
         const imageArray = imageFilesArray.map(image => {return image.image}) //get an array of just the images
         return(
             <div>

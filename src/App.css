@@ -17,7 +17,7 @@ body{
 }
   .Tech_Images_Display {
     display: flex; /*Ensures horizontal div placement for children*/
-    animation: 5s slide infinite linear; /*looping animation creating an infinite repeating loop (when 3 or more of the techs are conjoined*/
+    animation: 10s slide infinite linear; /*looping animation creating an infinite repeating loop (when 3 or more of the techs are conjoined*/
   }
             /*Slide moves the div from right to left offscreen*/
             @keyframes slide {
@@ -28,16 +28,25 @@ body{
                 transform: translateX(-100%);
               }
             }
-    .Tech_Images_Display div{
-      height: 8rem; /*Makes all images 4rem tall*/
-      width: 6rem; /*Makes all images 4rem wide*/
+    .Tech_Image_Box_Container{
+      height: 11rem; /*Makes all images 4rem tall*/
+      width: 8rem; /*Makes all images 4rem wide*/
       background-color: blueviolet;
       margin: 0 1rem; /*Adds a left/right gap between all images*/
-      border-radius: 1rem 1rem;
+      border-radius: 1rem 1rem; /*Add curved corners to box*/
     }
+      .Tech_Image_Box_Title {
+        padding-top: 0.5rem; /*Add padding between top of box and text*/
+        padding-bottom: 0.5rem; /*Add padding between text and image*/
+        text-align: center; /*centre text*/
+        font-size: large; /*Increase text size*/
+        font-weight: bold;/*Bold text*/
+      }
       .Tech_Images_Display img {
-        height: 100%; /*Makes all images 4rem tall*/
-        width: 100%; /*Makes all images 4rem wide*/
+        height: 5rem; /*controls height of the image (also this seems to control width)*/
+        width: 90%; /*Makes all images fill most of the width (also seems to compliment margin to centre imgae)*/
+        margin: 0.4rem; /*This margin centres the images*/
+        margin-top: 2rem; /*Add some distance between text and image*/
         object-fit: contain; /*Ensures the width/height doesn't distort image*/
-
+        background-color: #20201b;
       }
