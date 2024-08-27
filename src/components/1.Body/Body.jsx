@@ -1,5 +1,5 @@
 import { ListedTechsContainer } from "./Listed_Techs_Container"
-import { PriorJobs } from './Prior_Jobs'
+import { PriorJobs as PriorWork } from './Prior_Work'
 
 export const Body = () =>
 {
@@ -24,11 +24,12 @@ export const Body = () =>
                         <div className="Bullet_Point">👨‍💻 bullet point 2</div>
                         <div className="Bullet_Point">🔗 bullet point 3</div>
                         <div className="Bullet_Point">🌎 bullet point 4</div>
+                        <div className="Bullet_Point">💠 bullet point 5</div>
                     </div>
                 </div>
             </div>
             <ListedTechsContainer />
-            <PriorJobs />
+            <PriorWork />
             <div>Previous Projects</div>
         </div>
     )

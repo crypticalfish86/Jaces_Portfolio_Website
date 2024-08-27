@@ -33,7 +33,7 @@ body{
           margin: 1rem 0; /*Add a small margin in Y direction*/
         }
     .Tips_Information_Box{
-      border-radius: 1rem;
+      border-radius: 1rem; /*Gives curved borders*/
     }
       .Bullet_Point{
         background-color: brown !important;
@@ -80,3 +80,13 @@ body{
           object-fit: contain; /*Ensures the width/height doesn't distort image*/
           background-color: #20201b; /*TEMP COLOUR for div visibility*/
         }
+  
+  .Entire_Prior_Work_Section{
+      background-color: yellowgreen;
+      display: flex;
+      justify-content: center;
+    }
+      .Progress_Line{
+        background-color: yellow;
+        height: 24rem;
+      }
