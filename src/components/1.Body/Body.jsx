@@ -29,6 +29,7 @@ export const Body = () =>
                 </div>
             </div>
             <ListedTechsContainer />
+            <center><h1>Prior Work</h1></center>
             <PriorWork />
             <div>Previous Projects</div>
         </div>

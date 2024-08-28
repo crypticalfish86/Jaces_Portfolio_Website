@@ -86,7 +86,45 @@ body{
       display: flex;
       justify-content: center;
     }
-      .Progress_Line{
-        background-color: yellow;
-        height: 24rem;
+      .Entire_Job_Div{
+        background-color: aqua; /*Temp colour*/
+        display: flex; /*Involved in centering content*/
+        flex-direction: column;/*Involved in centering content*/
+        align-items: center;/*Involved in centering content*/
+        justify-content: center;/*Involved in centering content*/
+        position: relative;/*Involved in centering content*/
       }
+        .Date_Circle{
+          display: flex;/*Involved in centering content*/
+          justify-content: center;/*Involved in centering content*/
+          align-items: center;/*Involved in centering content*/
+          width: 12rem; /*Effects circle size*/
+          height: 12rem; /*Effects circle size*/
+          border-radius: 50%; /*makes div an actual circle*/
+          z-index: 2; /*Ensures the circle is in the topmost layer above the line and rectangles*/
+          background-color: green; /*Temp colour*/
+        }
+        .Line{
+          height: 25rem; /*Determines height of each single line section of each job*/
+          width: 8rem; /*Determines width of the whole line*/
+          margin-top: -1.5rem; /*Brings the line slightly up and into the circle making it look like the line is "coming out of the circle"*/
+          margin-bottom: -1.5rem; /*Brings the line slightly down and into any following circles making it look like the line is "feeding into the next circle"*/
+          position: relative;
+          z-index: 1; /*Ensures the line is in the middle layer, below circle but above rectangles*/
+          background-color: green; /*Temp colour*/
+        }
+          .Rectangle{
+            width: 16rem; /*Determines width of all rectangles*/
+            height: 8rem; /*Determines height of all rectangles*/
+            position: absolute;
+            top: 50%; /*Involved with rectangle position on the vertical line*/
+            transform: translateY(-50%); /*Involved with rectangle position on the vertical line*/
+            background-color: brown;/*Temp colour*/
+            z-index: 0; /*Ensures rectangles are in the bottom layer, below the circle and line*/
+          }
+          .Left_Rectangle_Info{
+              left: -20rem; /*Determines how far horizontally the rectangle rests off the line*/
+          }
+          .Right_Rectangle_Info{
+              right: -20rem; /*Determines how far horizontally the rectangle rests off the line*/
+          }
