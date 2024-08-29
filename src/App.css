@@ -82,9 +82,9 @@ body{
         }
   
   .Entire_Prior_Work_Section{
-      background-color: yellowgreen;
-      display: flex;
-      justify-content: center;
+      background-color: yellowgreen;/*Temp colour*/
+      display: flex;/*Involved in centering content*/
+      justify-content: center;/*Involved in centering content*/
     }
       .Entire_Job_Div{
         background-color: aqua; /*Temp colour*/

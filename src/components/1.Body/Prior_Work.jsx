@@ -55,16 +55,6 @@ export const PriorJobs = () =>
         jobArray.forEach(
             job => 
                 {
-                    /*newJobDivArray.push(
-                        <div>
-                            <div>{job.companyName}</div>
-                            <div>{job.jobTitle}</div>
-                            <div>{job.date}</div>
-                            <div>{job.technologiesUsed}</div>
-                            <div>{job.jobDescription}</div>
-                        </div>
-                    )*/
-
                     newJobDivArray.push(
                         <div className="Entire_Job_Div">
                             <div className="Date_Circle">{job.date}</div>
