@@ -4,11 +4,69 @@ export const PriorJobs = () =>
 {
 
 
+    /*
+        This Entire function takes a path to a parent folder and returns an array of "work objects"
+        
+        It creates the work object assuming the folder contains subfolders which:
+        1.Are named in a numerical sorting pattern e.g.(10NorthcodersBackEnd, 11NorthcodersFrontEnd)
+        2.Each subfolder contains 5 files, 1 .txt file containing the description and 4 .pngs
+
+        Each individual work object looks like this:
+
+        {description : "Description.txt", image1 : "imgURL.png", image2 : "imgURL.png", image3 : "imgURL.png", image4 : "imgURL.png",}
+
+        This is to be used to place on the html of the prior work line section
+    */
     function importAllWorkObjects(path)
     {
-        const workObjects = path.keys()
-        return workObjects
+        let allFilesInAllFoldersAtSource = path.keys() //get all items in the parent folder
+        console.log(allFilesInAllFoldersAtSource)
+        
+        let arrayOfWorkObjectsSize = allFilesInAllFoldersAtSource.length / 5; //gets the size of the array to create (assumes the fact that each work object consists of 1 .txt and 4 .pngs)
+
+        const arrayOfUnprocessedWorkObjects = [];
+
+        //pushes every 5 objects in "allFilesInAllFoldersAtSource" into their own array giving an array of the unprocessed workobject 
+        for (let i = 0; i < arrayOfWorkObjectsSize; i++)
+        {
+            arrayOfUnprocessedWorkObjects.push(allFilesInAllFoldersAtSource.slice(i * 5, (i * 5) + 5))
+        }
+
+        const arrayOfWorkObjects = arrayOfUnprocessedWorkObjects.map( (arrayOfWorkObjectFiles) =>
+        {
+            let workObjectDescriptionFile;
+            let arrayOfWorkObjectPngs = [];
+            for (let i = 0; i < arrayOfWorkObjectFiles.length; i++)
+            {
+                if(arrayOfWorkObjectFiles[i].includes('.txt'))
+                {
+                    workObjectDescriptionFile = arrayOfWorkObjectFiles[i];
+                }
+                else
+                {
+                    arrayOfWorkObjectPngs.push(arrayOfWorkObjectFiles[i])
+                }
+            }
+
+            const processedWorkObject = 
+            {
+                description : workObjectDescriptionFile,
+                image1 : arrayOfWorkObjectPngs[0],
+                image2 : arrayOfWorkObjectPngs[1],
+                image3 : arrayOfWorkObjectPngs[2],
+                image4 : arrayOfWorkObjectPngs[3]
+            }
+
+            return processedWorkObject
+        }
+
+        )
+
+        return arrayOfWorkObjects
     }
+
+    const workObjects = importAllWorkObjects(require.context('../../Assets/All_Prior_Work')); //DELETE THIS COMMENT WHEN PIECE OF CODE IS ENTIRLY SET UP, up to here the code is finished
+
 
     //let workObjects = importAllWorkObjects(require.context('../../Assets/All_Prior_Work'))
     /*These are just test values that should be deleted once entire thing is set up*/
