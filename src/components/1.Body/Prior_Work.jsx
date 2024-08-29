@@ -2,6 +2,15 @@ import { useEffect, useState } from "react";
 
 export const PriorJobs = () =>
 {
+
+
+    function importAllWorkObjects(path)
+    {
+        const workObjects = path.keys()
+        return workObjects
+    }
+
+    //let workObjects = importAllWorkObjects(require.context('../../Assets/All_Prior_Work'))
     /*These are just test values that should be deleted once entire thing is set up*/
     const companyName1 = "TEST1 (c)";
     const jobTitle1 = "TEST1 (jt)";
@@ -36,15 +45,20 @@ export const PriorJobs = () =>
         return job;
     }
 
-    /*Just a test job and job array for skeleton*/
-    const testJob1 = fillJobObject(companyName1, jobTitle1, date1, technologiesUsed1, jobDescription1)
-    const testJob2 = fillJobObject(companyName2, jobTitle2, date2, technologiesUsed2, jobDescription2)
-    const testJob3 = fillJobObject(companyName3, jobTitle3, date3, technologiesUsed3, jobDescription3)
-    const testJobArray = [testJob1, testJob2, testJob3]
-
     /*useState to keep track of all the job objects in an array (also useEffect to fill it with test data currently)*/
     const [currentJobArray, setCurrentJobArray] = useState([]);
-    useEffect(() => {setCurrentJobArray(testJobArray)}, testJobArray)
+    
+    useEffect(() => 
+        {
+            /*Just a test job and job array for skeleton*/
+            const testJob1 = fillJobObject(companyName1, jobTitle1, date1, technologiesUsed1, jobDescription1)
+            const testJob2 = fillJobObject(companyName2, jobTitle2, date2, technologiesUsed2, jobDescription2)
+            const testJob3 = fillJobObject(companyName3, jobTitle3, date3, technologiesUsed3, jobDescription3)
+            
+            const testJobArray = [testJob1, testJob2, testJob3]
+            setCurrentJobArray(testJobArray)
+        }
+    , companyName3 /*This will change once you fill with actual data*/)
 
     /*An array for html that is to be filled up with jobs to render in this component*/
     const [currentJobDivs, setCurrentJobDivs] = useState([<div>teststate</div>])
