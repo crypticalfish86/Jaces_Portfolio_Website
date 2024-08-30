@@ -13,7 +13,7 @@ export const PriorJobs = () =>
 
         Each individual work object looks like this:
 
-        {description : "Description.txt", image1 : "imgURL.png", image2 : "imgURL.png", image3 : "imgURL.png", image4 : "imgURL.png",}
+        {txtDescription : "Description.txt", images : ["image", "image", "image", ...]}
 
         This is to be used to place on the html of the prior work line section
     */

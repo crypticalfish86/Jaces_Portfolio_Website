@@ -1,4 +1,3 @@
-import { ListedTechsContainer } from "./Listed_Techs_Container"
 import { PriorJobs as PriorWork } from './Prior_Work'
 
 export const Body = () =>
@@ -28,7 +27,6 @@ export const Body = () =>
                     </div>
                 </div>
             </div>
-            <ListedTechsContainer />
             <center><h1>Prior Work</h1></center>
             <PriorWork />
             <div>Previous Projects</div>

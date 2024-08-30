@@ -1,11 +1,12 @@
 export const ListedTechs = (props) =>
 {
-    const imageArray = props.imageArray; //imageArray from parent containing all images of techs you've worked on
-    const imageTitles = props.imageTitles;//names of the images
-    
 
+    const imageArray = props.imageArray;
+    const imageTitles = props.imageTitles;
+    console.log(imageTitles)
     return(
-        <div className="Listed_Techs_Container">
+        <div id="Listed_Techs_Container">
+            ListedTechs
             <div className="Tech_Images_Display">
                 {imageArray.map((image, index) => (
                     <div className="Tech_Image_Box_Container">
