@@ -9,7 +9,7 @@ export const PriorJobs = () =>
         
         It creates the work object assuming the folder contains subfolders which:
         1.Are named in a numerical sorting pattern e.g.(10NorthcodersBackEnd, 11NorthcodersFrontEnd)
-        2.Each subfolder contains 5 files, 1 .txt file containing the description and 4 .pngs
+        2.Each subfolder contains a singular .txt file containing the description and the rest of the files in the subfolder are image files
 
         Each individual work object looks like this:
 
@@ -20,49 +20,53 @@ export const PriorJobs = () =>
     function importAllWorkObjects(path)
     {
         let allFilesInAllFoldersAtSource = path.keys() //get all items in the parent folder
-        console.log(allFilesInAllFoldersAtSource)
+        let sortedFilesInAllFoldersAtSource = allFilesInAllFoldersAtSource.sort();
         
-        let arrayOfWorkObjectsSize = allFilesInAllFoldersAtSource.length / 5; //gets the size of the array to create (assumes the fact that each work object consists of 1 .txt and 4 .pngs)
 
-        const arrayOfUnprocessedWorkObjects = [];
-
-        //pushes every 5 objects in "allFilesInAllFoldersAtSource" into their own array giving an array of the unprocessed workobject 
-        for (let i = 0; i < arrayOfWorkObjectsSize; i++)
+        /*
+            starts the process of turning the array of raw files into work objects by sorting them into their own nested arrays based on their numerical code (assumes code is an int from 10-99 starting after "./"
+        */
+        const arrayOfUnprocessedWorkObjectArrays = [];
+        let i = 0;
+        while (i < sortedFilesInAllFoldersAtSource.length)
         {
-            arrayOfUnprocessedWorkObjects.push(allFilesInAllFoldersAtSource.slice(i * 5, (i * 5) + 5))
-        }
-
-        const arrayOfWorkObjects = arrayOfUnprocessedWorkObjects.map( (arrayOfWorkObjectFiles) =>
-        {
-            let workObjectDescriptionFile;
-            let arrayOfWorkObjectPngs = [];
-            for (let i = 0; i < arrayOfWorkObjectFiles.length; i++)
+            const singleArrayOfPendingWorkObject = []
+            const currentWorkObjectNumericalCode = sortedFilesInAllFoldersAtSource[i].slice(2,4); //This will isolate the numerical code (assumes the code is an int from 10-99 starting after "./")
+            //while there are still files that abide by the current numerical code, it will continue pushing files to the current nested array
+            while (i <sortedFilesInAllFoldersAtSource.length && sortedFilesInAllFoldersAtSource[i].slice(2,4) === currentWorkObjectNumericalCode)
             {
-                if(arrayOfWorkObjectFiles[i].includes('.txt'))
+                singleArrayOfPendingWorkObject.push(sortedFilesInAllFoldersAtSource[i]);
+                i++;
+            }
+
+            arrayOfUnprocessedWorkObjectArrays.push(singleArrayOfPendingWorkObject); //once the nested array has been filled until there isnt anymore of that numerical code it will push that array onto the main array
+        }
+        //object at this point should look like [[file, file, file, ...], [file, file file, ...], ...]
+
+
+        /*
+            In this block of code we finally make the array of workObjects by taking each nested array and converting them into an object that looks like this:
+            {txtDescription : ".txtfileURL", images: ["image1", "image2", "image3", ...]}
+        */
+        const arrayOfWorkObjects = [];
+        for (let i = 0; i < arrayOfUnprocessedWorkObjectArrays.length; i++)
+        {
+            let singularWorkObject = {txtDescription : "", images : []};
+            for (let j = 0; j < arrayOfUnprocessedWorkObjectArrays[i].length; j++)
+            {
+                if(arrayOfUnprocessedWorkObjectArrays[i][j].includes(".txt"))
                 {
-                    workObjectDescriptionFile = arrayOfWorkObjectFiles[i];
+                    singularWorkObject.txtDescription = arrayOfUnprocessedWorkObjectArrays[i][j];
                 }
                 else
                 {
-                    arrayOfWorkObjectPngs.push(arrayOfWorkObjectFiles[i])
+                    singularWorkObject.images.push(arrayOfUnprocessedWorkObjectArrays[i][j])
                 }
             }
-
-            const processedWorkObject = 
-            {
-                description : workObjectDescriptionFile,
-                image1 : arrayOfWorkObjectPngs[0],
-                image2 : arrayOfWorkObjectPngs[1],
-                image3 : arrayOfWorkObjectPngs[2],
-                image4 : arrayOfWorkObjectPngs[3]
-            }
-
-            return processedWorkObject
+            arrayOfWorkObjects.push(singularWorkObject);
         }
 
-        )
-
-        return arrayOfWorkObjects
+        return arrayOfWorkObjects;
     }
 
     const workObjects = importAllWorkObjects(require.context('../../Assets/All_Prior_Work')); //DELETE THIS COMMENT WHEN PIECE OF CODE IS ENTIRLY SET UP, up to here the code is finished
