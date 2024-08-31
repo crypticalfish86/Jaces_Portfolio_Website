@@ -23,6 +23,7 @@
     left: 0;
     height: 100%;
     width: 15%;
+    z-index: 1;/*Ensures this div is above listed_techs_container (so that overflowing tech boxes go under this div)*/
 }
 /*The scrolling tech box*/
 #Listed_Techs_Container{
@@ -34,9 +35,15 @@
     width: 85%;
     display: flex; /*Place child divs horizontally to each other*/
     justify-content: center; /*Centres the children divs*/
+    z-index: 0; /*Ensures this div is in the bottom layer (so that overflowing tech boxes go under the side page)*/
+    overflow: hidden;
 }
 
+/*Side_Page_Classes*/
 
+
+
+/*#Listed_Techs_Container classes*/
 .Listed_Techs_Container{
     overflow: hidden; /*Hides overflowing tech images*/
     padding: 4rem 0; /*4rem to top/bottom padding but 0 padding to right/left*/
@@ -60,7 +67,7 @@
         height: 11rem; /*Makes all images 4rem tall*/
         width: 8rem; /*Makes all images 4rem wide*/
         background-color: blueviolet; /*TEMP COLOUR for div visibility*/
-        margin: 0 1rem; /*Adds a left/right gap between all images*/
+        margin: 0.5rem 1rem; /*Adds a left/right gap between all images, and top/bottom gap between parent div*/
         border-radius: 1rem 1rem; /*Add curved corners to box*/
       }
         .Tech_Image_Box_Title {

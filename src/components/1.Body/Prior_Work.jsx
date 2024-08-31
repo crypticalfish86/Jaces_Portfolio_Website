@@ -19,7 +19,7 @@ export const PriorJobs = () =>
     */
     function importAllWorkObjects(path)
     {
-        let allFilesInAllFoldersAtSource = path.keys() //get all items in the parent folder
+        let allFilesInAllFoldersAtSource = path.keys(); //get all items in the parent folder
         let sortedFilesInAllFoldersAtSource = allFilesInAllFoldersAtSource.sort();
         
 

@@ -3,7 +3,7 @@ export const ListedTechs = (props) =>
 
     const imageArray = props.imageArray;
     const imageTitles = props.imageTitles;
-    console.log(imageTitles)
+    
     return(
         <div id="Listed_Techs_Container">
             ListedTechs
