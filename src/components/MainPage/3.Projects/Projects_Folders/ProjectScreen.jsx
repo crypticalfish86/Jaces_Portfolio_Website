@@ -71,7 +71,7 @@ export const ProjectScreen = () =>
         //Use memo used to prevent the useEffect infinitley rerendering (this function creates the work objects array)
         const workObjects = useMemo( () =>
             {
-                return importAllWorkObjects(require.context('../../../Assets/All_Prior_Work'))
+                return importAllWorkObjects(require.context('../../../../Assets/All_Prior_Work'))
             }, []
         )
 

@@ -1,10 +1,9 @@
 import { ProjectScreen } from "./ProjectScreen"
 
-export const MainTerminal = () =>
+export const ProjectFolders = () =>
 {
     return(
-        <div id="Main_Terminal">
-            Main terminal
+        <div id="Project_Folders">
             <ProjectScreen />
         </div>
     )
